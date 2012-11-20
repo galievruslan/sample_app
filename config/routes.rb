@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
-  get "users/new"
+  resources :users
+  
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
@@ -64,3 +65,11 @@ SampleApp::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+#== Route Map
+# Generated on 09 Nov 2012 14:22
+#
+#   contact     /contact(.:format)   {:controller=>"pages", :action=>"contact"}
+#     about     /about(.:format)     {:controller=>"pages", :action=>"about"}
+#      help     /help(.:format)      {:controller=>"pages", :action=>"help"}
+#    signup     /signup(.:format)    {:controller=>"users", :action=>"new"}
+#      root     /(.:format)          {:controller=>"pages", :action=>"home"}
